@@ -5,8 +5,7 @@ function keyPush(event) {
 
     if (!game || !game.activePlay) return
     document.getElementById("pontuacao").classList.remove("hidden")
-    document.getElementById("titulo").classList.remove("visible")
-    document.getElementById("titulo").classList.add("hidden")
+    document.getElementById("titulo2").innerHTML = "Cuidado com as paredes!"
 
     switch (event.keyCode) {
         case 37: // Esquerda
@@ -98,6 +97,8 @@ class Game {
         clearInterval(this.interval)
         
         document.getElementById("gameOver").style.display = "block"
+        document.getElementById("titulo2").classList.remove("visible")
+        document.getElementById("titulo2").classList.add("hidden")
         console.log("Game Over!")
         console.log("Jogo Finalizado, pressione F5")
     }
